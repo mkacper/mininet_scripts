@@ -19,12 +19,12 @@ def emptyNet():
   c2addr = '192.168.56.100'
   c3addr = '192.168.56.103'
 
-  system("echo 'h1 python gen_normal_packet.py " + str(h_range) + " " + str(packets)
-  + " " + str(p_interval) + " &' > gen_scapy.sh")
+  system("echo 'h1 nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
+  + " " + str(p_interval) + " /dev/null 2>&1 &' > gen_scapy.sh")
   system("echo 'h" + str(h_range/3 + 1) +" python gen_normal_packet.py " + str(h_range) + " " + str(packets)
-  + " " + str(p_interval) + " &' >> gen_scapy.sh")
+  + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
   system("echo 'h'" + str(h_range) + " python gen_normal_packet.py " + str(h_range) + " " + str(packets)
-  + " " + str(p_interval) + " &' >> gen_scapy.sh")
+  + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
   net = Mininet(topo=None, controller=RemoteController, switch=OVSKernelSwitch,
                 link=TCLink)
   c1 = net.addController('c1', controller=RemoteController, ip=c1addr,
