@@ -14,7 +14,7 @@ def emptyNet():
   s_range = 3
   h_range = int(argv[1])
   packets = int(argv[2])
-  p_interval = float(argv[3])
+  p_interval = int(argv[3])
   c1addr = '192.168.56.1'
   c2addr = '192.168.56.100'
   c3addr = '192.168.56.103'
