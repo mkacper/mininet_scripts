@@ -49,6 +49,7 @@ def emptyNet():
   net.build()
   c1.start()
   c2.start()
+  c3.start()
   switches[0].start([c1])
   switches[1].start([c2])
   switches[2].start([c3])
