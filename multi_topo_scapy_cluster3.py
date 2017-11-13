@@ -21,9 +21,9 @@ def emptyNet():
 
   system("echo 'h1 nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
   + " " + str(p_interval) + " /dev/null 2>&1 &' > gen_scapy.sh")
-  system("echo 'h" + str(h_range/3 + 1) +" python gen_normal_packet.py " + str(h_range) + " " + str(packets)
+  system("echo 'h" + str(h_range/3 + 1) + " nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
   + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
-  system("echo 'h'" + str(h_range) + " python gen_normal_packet.py " + str(h_range) + " " + str(packets)
+  system("echo 'h" + str(h_range) + " nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
   + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
   net = Mininet(topo=None, controller=RemoteController, switch=OVSKernelSwitch,
                 link=TCLink)
