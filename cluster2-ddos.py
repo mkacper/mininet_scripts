@@ -23,7 +23,7 @@ def emptyNet():
   system("echo 'attacker nohup python gen_ddos_packet.py target " + str(ddos_packets)
   + " " + str(ddos_interval) + " /dev/null 2>&1 &' > gen_scapy.sh")
   system("echo 'h1 nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
-  + " " + str(p_interval) + " /dev/null 2>&1 &' > gen_scapy.sh")
+  + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
   system("echo 'h" + str(h_range/2 + 1) + " nohup python gen_normal_packet.py " + str(h_range) + " " + str(packets)
   + " " + str(p_interval) + " /dev/null 2>&1 &' >> gen_scapy.sh")
   net = Mininet(topo=None, controller=RemoteController, switch=OVSKernelSwitch,
