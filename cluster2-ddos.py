@@ -15,8 +15,8 @@ def emptyNet():
   h_range = int(argv[1])
   packets = int(argv[2])
   p_interval = int(argv[3])
-  ddos_packets = int(argv[5])
-  ddos_interval = int(argv[6])
+  ddos_packets = int(argv[4])
+  ddos_interval = int(argv[5])
   c1addr = '192.168.56.1'
   c2addr = '192.168.56.100'
 
